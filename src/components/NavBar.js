@@ -12,6 +12,9 @@ function NavBar() {
             >
             Learn React
             </a>
+            <div className='menu-icon'>
+                //18.27: https://www.youtube.com/watch?v=I2UBjN5ER4s&ab_channel=BrianDesign
+            </div>
         </div>
       </nav>
     </div>
