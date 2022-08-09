@@ -1,13 +1,12 @@
 import './App.css';
-//import react from 'react'
 import Navbar from './components/NavBar'
-//edit src/App.js and save to reload
-
+import Testcomponents from './components/test';
+//<Navbar>
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Testcomponents />
     </div>
   );
 }
