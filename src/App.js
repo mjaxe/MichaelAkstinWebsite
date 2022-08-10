@@ -6,7 +6,7 @@ import Testcomponents from './components/test';
 function App() {
   return (
     <div className="App">
-      <Testcomponents />
+      <Navbar Testcomponents/>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './test.css'
 import Typewriter from 'typewriter-effect';
 
-function Testcomponents() {
+function CenterTyper() {
   return (
     <div className='type-container'>
       <Typewriter
@@ -18,4 +18,4 @@ function Testcomponents() {
   )
 }
 
-export default Testcomponents
+export default CenterTyper
