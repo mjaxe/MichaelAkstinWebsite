@@ -1,37 +1,61 @@
-//check
-//18.27: https://www.youtube.com/watch?v=I2UBjN5ER4s&ab_channel=BrianDesign
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './test.css'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import './NavBar.css';
 
-function NavBar () {
-  return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">Michael Akstin</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
-              <Nav.Link href="http://google.com">Google</Nav.Link>
-              <NavDropdown title="Academia" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#coursework">Course Work</NavDropdown.Item>
-                <NavDropdown.Item href="#greeklife">Greek Life</NavDropdown.Item>
-                <NavDropdown.Item href="#athletics">Athletics</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#aboutwpi">About me at WPI</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
-  )
+function Navbar() {
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true)
+
+    const handleClick = () => setClick(!click);
+    const closeMobileMenu = () => setClick(false)
+
+    const showButton = () => {
+        if (window.innerWidth <= 960) {
+            setButton(false)
+        } else {
+            setButton(true)
+        }
+    };
+
+    useEffect(() => {
+        showButton();
+    }, []);
+
+    window.addEventListener('resize', showButton);
+
+    return (
+        <>
+            <nav className="navbar">
+                <div className="navbar-container">
+                    <div className='navbar-logo'>
+                        <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" alt="" width="70" height="70" />
+                    </div>
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                        <li className='nav-item'>
+                            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                                Home
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
+                                About
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/academia' className='nav-links' onClick={closeMobileMenu}>
+                                Academia
+                            </Link>
+                        </li>
+                        <li className='nav-item'>
+                            <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </>
+    )
 }
 
-export default NavBar
+export default Navbar
