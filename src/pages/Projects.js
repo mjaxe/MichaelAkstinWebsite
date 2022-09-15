@@ -1,11 +1,12 @@
 import React from 'react';
-
+import './Projects.css'
 import CardItem from '../components/CardItem'
+import Testcomponents from '../components/test';
 
 const Projects = () => {
     return (
         <div>
-            <h1>Click on one of my projects to see the code!</h1>
+            <h2 className='second-header'>Click on one of my projects to see the code!</h2>
             <CardItem />
         </div>
 
