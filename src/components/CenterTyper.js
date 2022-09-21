@@ -10,12 +10,13 @@ const CenterTyper = () => {
       <h1 className='type-container'>
         <Typewriter
           options={{
-            strings: ["I\'m Mike", "I\'m a cs student"],
+            strings: ["I\'m Mike", "I\'m a CS student"],
             autoStart: true,
             loop: true,
           }}
         />
       </h1>
+      
       <h2 className="second-header">Hi, welcome to my website!</h2>
     </div>
   )

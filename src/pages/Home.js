@@ -1,7 +1,6 @@
 import React from 'react';
 import CenterTyper from '../components/CenterTyper'
 
-
 const Home = () =>{
     return(
         <div>

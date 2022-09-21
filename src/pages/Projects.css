@@ -1,6 +1,6 @@
- .second-header {
+.second-header {
      color: rgb(0, 0, 0);
-     background: rgba(254, 254, 254);
+     background: rgba(254, 254, 254, 0.9);
      padding: 0.5px;
      width: 500px;
      margin: auto;
@@ -13,3 +13,5 @@
      margin-top: 40px;
      width: 800px;
  }
+
+ 
